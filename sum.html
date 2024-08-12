@@ -1,0 +1,23 @@
+<!-- design a text box with 2 input numbers and another text box named sum which sums when clicling the button -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>numbers and sum</title>
+  </head>
+  <body>
+    <p>firstNumber:<input type="text" id="n1" /></p>
+    <p>secondNumber:<input type="text" id="n2" /></p>
+    <p>result:<input type="text" id="n3" disabled /></p>
+    <p><button onclick="display()">sum</button></p>
+    <script>
+      function display() {
+        let a = Number(document.getElementById("n1").value);
+        let b = Number(document.getElementById("n2").value);
+        let s = a + b;
+        document.getElementById("n3").value = s;
+      }
+    </script>
+  </body>
+</html>

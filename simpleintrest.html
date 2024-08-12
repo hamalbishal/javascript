@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simpleintrest</title>
+  </head>
+  <body>
+    <p>principal:<input type="text" id="n1" /></p>
+    <p>rate:<input type="text" id="n2" /></p>
+    <p>time:<input type="text" id="n3" /></p>
+    <p>result:<input type="text" id="n4" disabled /></p>
+    <!-- <p><button onclick="simpleintrest()">SI</button></p> -->
+    <p><button id="btn">SI</button></p>
+    <script>
+      function simpleintrest() {
+        let p = parseInt(document.getElementById("n1").value);
+        let r = parseInt(document.getElementById("n2").value);
+        let t = parseInt(document.getElementById("n3").value);
+        let SI = (p * t * r) / 100;
+        document.getElementById("n4").value = SI;
+      }
+      const button = document.getElementById("btn");
+      button.onclick = simpleintrest;
+    </script>
+  </body>
+</html>

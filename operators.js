@@ -1,0 +1,10 @@
+a=parseInt(prompt("enter first number "));
+b=parseInt(prompt("enter second number "));
+console.log(a+b);
+console.log(a-b);
+console.log(a*b);
+console.log(a/b);
+console.log(a%b);
+console.log(a++);
+console.log(b--);
+console.log(a**b);
