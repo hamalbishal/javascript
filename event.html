@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Colorful Webpage</title>
+  </head>
+  <body>
+    <select onchange="changeBackgroundColor(this.value)">
+      <option value="">Select a color</option>
+      <option value="red">Red</option>
+      <option value="green">Green</option>
+      <option value="blue">Blue</option>
+      <option value="yellow">Yellow</option>
+    </select>
+
+    <script>
+      function changeBackgroundColor(selectedColor) {
+        document.body.style.backgroundColor = selectedColor;
+      }
+    </script>
+  </body>
+</html>
