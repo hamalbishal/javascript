@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #bid {
+        height: 100px;
+        width: 100px;
+        border: 10px solid black;
+        margin: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="bid"></div>
+    <script>
+      x = document.getElementById("bid");
+      x.addEventListener("mouseout", display);
+      x.addEventListener("dblclick", test);
+      function display() {
+        document.getElementById("bid").style.background = "red";
+      }
+      function demo() {
+        document.getElementById("bid").removeEventListener("mouseout", display);
+      }
+      function test() {
+        document.getElementById("bid").style.background = "green";
+      }
+    </script>
+  </body>
+</html>

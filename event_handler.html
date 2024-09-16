@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="demo()">click here</button>
+    <p id="abc"></p>
+    <script>
+        function demo(){
+            var d=new Date();
+            var h=d.getHours();
+            var m=d.getMinutes();
+            var s=d.getSeconds();
+            var a=(h>=12)?"PM":"AM";
+            var x=(h>12)?(h-12):h;
+            var t=(h+":"+m+":"+s+a);
+            document.getElementById("abc").innerHTML=t;
+        }
+    </script>
+</body>
+</html>

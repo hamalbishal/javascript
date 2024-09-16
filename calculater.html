@@ -1,0 +1,78 @@
+bishal hamal mafffff
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        button{
+            height:100%;
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body>
+    <script>
+        let expression=''
+
+        function get(value){
+            expression+=value;
+            document.getElementById("display").value=expression;
+
+        }
+        function calculate(){
+            try{
+                document.getElementById('display').value=eval(expression)
+                expression=''
+            }
+            catch{
+                document.getElementById('display').value='error'
+                expression=''
+            }
+        }
+        function cleardisplay(){
+            expression=''
+            document.getElementById('display').value=''
+        }
+    </script>
+    <table>
+        <tr>
+            <td colspan="3"><input type="text"id="display"></td>
+            <td><button value="C" onclick="cleardisplay()">C</button></td>
+        </tr>
+        
+        <tr>
+            <td><button value="1" onclick="get(1)">1</button></td>
+            <td><button value="2" onclick="get(2)">2</button></td>
+            <td><button value="3" onclick="get(3)">3</button></td>
+            <td><button value="+" onclick="get('+')">+</button></td>
+        </tr>
+        
+        <tr>
+            <td><button value="4"onclick="get(4)">4</button></td>
+            <td><button value="5"onclick="get(5)">5</button></td>
+            <td><button value="6"onclick="get(6)">6</button></td>
+            <td><button value="-"onclick="get('-')">-</button></td>
+        </tr>
+        
+        <tr>
+            <td><button value="7"onclick="get(7)">7</button></td>
+            <td><button value="8"onclick="get(8)">8</button></td>
+            <td><button value="9"onclick="get(9)">9</button></td>
+            <td><button value="/"onclick="get('/')">/</button></td>
+        </tr>
+        
+        <tr>
+            <td><button value="*"onclick="get('*')">*</button></td>
+            <td><button value="0"onclick="get(0)">0</button></td>
+            <td><button value="."onclick="get('.')">.</button></td>
+            <td><button value="="onclick="calculate()">=</button></td>
+        </tr>
+
+    </table>
+    
+</body>
+</html>

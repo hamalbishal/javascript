@@ -1,0 +1,93 @@
+<!-- design a webpage with two input text box to read input values and another text box to display the result when you click a button SUM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <script>
+    function validation(){
+      var user_name = document.getElementById('name').value;
+      var password = document.getElementById('password').value;
+      var name_error = document.getElementById('name_error').value;
+      var password_error = document.getElementById('password_error').value;
+      var confirm_password = document.getElementById('confirm_password').value;
+      var phone = document.getElementById('phone').value;
+      if(user_name==""){
+        name_error.innerHTML = "please enter username...";
+        return false;
+      }
+      else if(password==""){
+        password_error.innerHTML="please enter password...";
+        return false;
+      }
+      // else if(password.length<8){
+      //   alert("password must be grater then 8 character");
+      //   return false;
+      // }
+      else if(!password.match(/[a-zA-Z$]{8}/)){
+        alert("enter all characters...");
+        return false;
+      }
+
+      else if(password!=confirm_password){
+        alert("password is not matching..");
+        return false;
+      }
+      else if(phone.length!=10){
+        alert("number must be in 10 digits.");
+        return false;
+      }
+      else if(isNaN(phone)){
+        alert("phone numbers must allowed in digitis..");
+        return false;
+      }
+
+      else{
+        true;
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- <form action="">
+    <fieldset>
+        <legend><b>User personal information</b></legend>
+        <p>Enter your full name</p>
+        <input type="text" name="fname" id="fname"><br>
+        <p>Enter your email</p>
+        <input type="email" name="email" id="email"><br>
+        <p>Enter your Phone</p>
+        <input type="phone" name="phone" id="phone"><br>
+        <p>Enter your password</p>
+        <input type="password" name="pass" id="pass">
+        <p>Confirm your password</p>
+        <input type="password" name="cpass" id="cpass">
+        <p>Enter your gender</p>
+        <input type="radio" name="gender" id="male">Male
+        <input type="radio" name="gender" id="female">Female
+        <input type="radio" name="gender" id="other">Others
+        <br>
+        <p>Enter your Date of Birth</p>
+        <input type="date" name="dob" id="dob"> <br>
+        <p>Enter your Address</p>
+        <input type="text" name="add" id="add"> <br> <br>
+        <input type="submit" value="submit">
+
+
+    </fieldset>
+    
+  </form> -->
+  <h1>Login Form</h1>
+    <form action="form5.html" onsubmit="return validation()" autocomplete="on">
+      Username: <input type="text" name="" id="name"><br>
+      <span id="name_error" style="color: red;"></span><br>
+      Password: <input type="password" name="" id="password"><br><br>
+      Confirm Password: <input type="password" name="" id="confirm_password"><br><br>
+      Phone Number: <input type="text" name="" id="phone"><br>
+      <span id="password_error"></span><br>
+     <input type="submit">
+      
+
+    </form>
+</html>

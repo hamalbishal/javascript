@@ -1,58 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        function validation() {
-            var user_name = document.getElementById('user_name').value;
-            var password = document.getElementById('password').value;
-            var confirm_password = document.getElementById('confirm_password').value;
-            var phone_number = document.getElementById('phone_number').value;
-            var name_error = document.getElementById('name_error');
-            var password_error = document.getElementById('password_error');
+      function validation() {
+        var user_name = document.getElementById("user_name").value;
+        var password = document.getElementById("password").value;
+        var confirm_password =
+          document.getElementById("confirm_password").value;
+        var phone_number = document.getElementById("phone_number").value;
+        var name_error = document.getElementById("name_error");
+        var password_error = document.getElementById("password_error");
 
-            // Clear previous error messages
-            name_error.innerHTML = "";
-            password_error.innerHTML = "";
+        // Clear previous error messages
+        name_error.innerHTML = "";
+        password_error.innerHTML = "";
 
-            var isValid = true;
+        var isValid = true;
 
-            if (user_name === "") {
-                name_error.innerHTML = "Please enter user name.";
-                isValid = false;
-            }
-
-            if (password === "") {
-                password_error.innerHTML = "Please enter password.";
-                isValid = false;
-            } else if (password.length < 8) {
-                password_error.innerHTML = "Password must be at least 8 characters.";
-                isValid = false;
-            } else if (password !== confirm_password) {
-                password_error.innerHTML = "Passwords do not match.";
-                isValid = false;
-            }
-
-            return isValid;
+        if (user_name === "") {
+          name_error.innerHTML = "Please enter user name.";
+          isValid = false;
         }
+
+        if (password === "") {
+          password_error.innerHTML = "Please enter password.";
+          isValid = false;
+        } else if (password.length < 8) {
+          password_error.innerHTML = "Password must be at least 8 characters.";
+          isValid = false;
+        } else if (password !== confirm_password) {
+          password_error.innerHTML = "Passwords do not match.";
+          isValid = false;
+        }
+
+        return isValid;
+      }
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Login Form</h1>
 
     <form onsubmit="return validation()" action="index.html">
-        User Name: <input type="text" id="user_name"><br>
-        <span id="name_error" style="color:red;"></span><br><br>
+      User Name: <input type="text" id="user_name" /><br/>
+      <span id="name_error" style="color: red"></span><br /><br />
 
-        Password: <input type="password" id="password"><br>
-        Confirm Password: <input type="password" id="confirm_password"><br>
-        <span id="password_error" style="color:red;"></span><br><br>
+      Password: <input type="password" id="password" /><br /><br/>
 
-        Phone Number: <input type="tel" id="phone_number"><br><br>
+      Confirm Password: <input type="password" id="confirm_password" /><br />
+      <span id="password_error" style="color: red"></span><br /><br />
 
-        <input type="submit" value="Submit">
+      Phone Number: <input type="tel" id="phone_number" /><br /><br />
+
+      <input type="submit" value="Submit" />
     </form>
-</body>
+  </body>
 </html>
